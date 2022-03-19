@@ -5,8 +5,6 @@ const express = require('express');
 const app = express();
 const mediaList = require('./mediaList')
 
-console.log(mediaList)
-
 // set the template with exoress
 app.set('view engine', 'ejs');
 
@@ -19,10 +17,10 @@ app.get('/api/media_list', (req, res) => {
     res.render('media_list');
 })
 
-app.get('/api/media/:Title', (req, res) => {
-    let foundMedia = mediaList.find((media) => media.Title == req.params.slug);
-    res.render('media_info', { displayMedia: foundMedia });
-});
+// app.get('/api/media/:Title', (req, res) => {
+//     let foundMedia = mediaList.filter((media) => media.Title == req.params.Title);
+//     res.render('media_list', { displayMedia: foundMedia });
+// });
 
 
 // server 
